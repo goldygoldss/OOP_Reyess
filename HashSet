@@ -1,0 +1,46 @@
+
+package javaapplication58;
+import java.util.Collections;
+import java.util.HashSet;
+public class JavaApplication58 {
+
+    public static void main(String[] args) {
+        HashSet a = new HashSet();
+        HashSet b = new HashSet();
+        HashSet c = new HashSet<>();
+        
+        Collections.addAll(a, "Mark", "Nika", "Mario", "Kae");
+        Collections.addAll(b, "John", "Marco", "Mark");
+        Collections.addAll(b, "Nika", "John", "Mario");
+        
+        HashSet union = new HashSet(a);
+        HashSet inter = new HashSet(a);
+        HashSet diff = new HashSet(a);
+        
+        HashSet union1 = new HashSet(b);
+        HashSet inter1 = new HashSet(b);
+        HashSet diff1 = new HashSet(b);
+        
+        union.addAll(b);
+        inter.retainAll(b);
+        diff.remove(b);
+        
+        union1.addAll(c);
+        inter1.retainAll(c);
+        diff1.remove(c);
+        
+        System.out.println("Union of a and b: " + union);
+        System.out.println("Intersection of and b: " + inter);
+        System.out.println("Difference of a and b: " + diff);
+        
+        System.out.println();
+        
+        System.out.println("Union of B and c: " + union1);
+        System.out.println("Intersection of and b: " + inter1);
+        System.out.println("Difference of a and b: " + diff1);
+        
+        
+        
+    }
+    
+}
