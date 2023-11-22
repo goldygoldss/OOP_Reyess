@@ -1,0 +1,46 @@
+import java.util.*;
+
+public class StudentList {
+    public static void main(String[] args) {
+        // Step 4: Create an empty hash map named students
+        Map<String, String> students = new HashMap<>();
+
+        // Step 5.1: Ask three classmates to enter their student number (key) and first name (value)
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < 3; i++) {
+            System.out.print("Enter student number: ");
+            String studentNumber = scanner.nextLine();
+            System.out.print("Enter first name: ");
+            String firstName = scanner.nextLine();
+            students.put(studentNumber, firstName);
+        }
+
+        // Step 5.2: Display the keys and values of the map
+        System.out.println("Entries in the map:");
+        for (Map.Entry<String, String> entry : students.entrySet()) {
+            System.out.println("Student Number: " + entry.getKey() + ", First Name: " + entry.getValue());
+        }
+
+        // Step 5.3: Delete the mapping of the third entry
+        if (students.size() >= 3) {
+            Iterator<Map.Entry<String, String>> iterator = students.entrySet().iterator();
+            for (int i = 0; i < 2; i++) {
+                iterator.next();
+            }
+            iterator.remove();
+        }
+
+        // Step 5.4: Enter your student number and first name (new third entry)
+        System.out.print("Enter your student number: ");
+        String myStudentNumber = scanner.nextLine();
+        System.out.print("Enter your first name: ");
+        String myFirstName = scanner.nextLine();
+        students.put(myStudentNumber, myFirstName);
+
+        // Step 5.5: Display the entries in separate lines
+        System.out.println("Updated entries in the map:");
+        for (Map.Entry<String, String> entry : students.entrySet()) {
+            System.out.println("Student Number: " + entry.getKey() + ", First Name: " + entry.getValue());
+        }
+    }
+}
