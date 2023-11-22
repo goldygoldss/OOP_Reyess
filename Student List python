@@ -1,0 +1,22 @@
+students = {}
+
+for i in range(3):
+    student_number = input("Enter student number: ")
+    first_name = input("Enter first name: ")
+    students[student_number] = first_name
+
+print("Entries in the dictionary:")
+for key, value in students.items():
+    print(f"Student Number: {key}, First Name: {value}")
+
+if len(students) >= 3:
+    keys = list(students.keys())
+    del students[keys[2]]
+
+my_student_number = input("Enter your student number: ")
+my_first_name = input("Enter your first name: ")
+students[my_student_number] = my_first_name
+
+print("Updated entries in the dictionary:")
+for key, value in students.items():
+    print(f"Student Number: {key}, First Name: {value}")
